@@ -24,7 +24,6 @@ export default function ItemListContainer({children, greeting}) {
       <>
       <p className="greeting">{greeting}</p>
       {children}
-      <TestCounter amount={0} min={0} max={10}/>
       <section>
       {products.map(product=><Item key={product.id} product={product}/>)}
       </section>
