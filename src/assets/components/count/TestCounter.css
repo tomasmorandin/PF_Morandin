@@ -1,0 +1,15 @@
+.button{
+    width: 60px;
+    border-radius: 5px;
+    border: 1px solid #031A51;
+    background-color: #FFAB11;
+    color: #031A51;
+    margin: 5px;
+    line-height: 2;
+}
+
+p{
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
