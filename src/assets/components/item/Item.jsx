@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom'
 import './Item.css'
 
 export default function Item({product}) {
+
     return (
       <>
       <article className="text-center article">
