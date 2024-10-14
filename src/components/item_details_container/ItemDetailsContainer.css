@@ -15,27 +15,32 @@
 }
 .container-fluid .row .description .card-text1 {
   color: #031A51;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: bolder;
 }
 .container-fluid .row .description .card-text2 {
   color: #031A51;
   font-size: 15px;
-  text-align: left;
+  margin-bottom: 25px;
 }
 .container-fluid .row .description .btn {
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
   border-radius: 5px;
   border: 1px solid #031A51;
   background-color: #031A51;
   color: #fff;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   line-height: 2;
   transition: all 0.7s;
-  margin-top: 150px;
 }
 .container-fluid .row .description .btn:hover {
   background-color: #FFAB11;
   border: 1px solid #FFAB11;
   transform: scale(1.05);
   color: #031A51;
-}/*# sourceMappingURL=ItemDetailPila.css.map */
+}
+
+/*# sourceMappingURL=ItemDetailsContainer.css.map */

@@ -36,25 +36,28 @@ $height2: 80px;
     
             .card-text1{
                 color: $color5;
-                font-size: 20px;
+                font-size: 25px;
+                font-weight: bolder;
             }
     
             .card-text2{
                 color: $color5;
                 font-size: 15px;
-                text-align: left;
+                margin-bottom: 25px;
             }
     
             .btn{
-                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin: 0 auto;
+                width: 50%;
                 border-radius: 5px ;
                 border: 1px solid $color5;
                 background-color: $color5;
                 color: $color1;
-                margin-bottom: 25px;
+                margin-bottom: 10px;
                 line-height: 2;
                 transition: all 0.7s;
-                margin-top: 150px;
             }
     
             .btn:hover{

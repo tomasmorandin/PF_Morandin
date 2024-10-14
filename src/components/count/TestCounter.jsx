@@ -1,3 +1,4 @@
+/*
 import { useRef, useState } from 'react'
 import './TestCounter.css'
 export default function TestCounter ({amount, min, max}) {
@@ -31,3 +32,4 @@ export default function TestCounter ({amount, min, max}) {
       </>
     )
   }
+*/

@@ -2,9 +2,10 @@ import './NavBar.css'
 import CartWidget from '../cart_widget/CartWidget'
 import Brand from './Brand'
 import { NavLink } from 'react-router-dom'
-import { CartProvider } from '../context/CartContext'
 
-export default function NavBar(product) {
+
+export default function NavBar() {
+
     return (
       <>
       <nav className="navbar navbar-expand-md navbar-dark">
@@ -24,10 +25,11 @@ export default function NavBar(product) {
       <li className="nav-item">
          <NavLink to={`/category/Controles`} className="nav-link mx-4">Controles</NavLink>
          </li>
+      <li className="nav-item">
+         <NavLink to={`/Contact`} className="nav-link mx-4">Contacto</NavLink>
+         </li>
       </ul>
-      <CartProvider>
       <CartWidget/>
-      </CartProvider>
     </div>
   </div>
 </nav>
