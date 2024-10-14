@@ -2,6 +2,7 @@ import './NavBar.css'
 import CartWidget from '../cart_widget/CartWidget'
 import Brand from './Brand'
 import { NavLink } from 'react-router-dom'
+import { CartProvider } from '../context/CartContext'
 
 
 export default function NavBar() {

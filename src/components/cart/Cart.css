@@ -4,8 +4,13 @@
 }
 .cart .card-text1 {
   color: #031A51;
-  font-size: 25px;
+  font-size: 45px;
   font-weight: bolder;
+}
+.cart .card-text2 {
+  color: #031A51;
+  font-size: 25px;
+  margin-bottom: 25px;
 }
 .cart .btn {
   width: 180px;
@@ -18,7 +23,7 @@
   transition: all 0.7s;
   text-align: center;
   text-decoration: none;
-  margin: 25px;
+  margin: 20px;
 }
 .cart .btn:hover {
   background-color: #FFAB11;

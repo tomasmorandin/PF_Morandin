@@ -42,5 +42,19 @@
   transform: scale(1.05);
   color: #031A51;
 }
+.container-fluid .row .description .button {
+  width: 60px;
+  border-radius: 5px;
+  border: 1px solid #031A51;
+  background-color: #031A51;
+  color: #fff;
+  margin: 5px;
+  line-height: 2;
+}
+.container-fluid .row .description p {
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=ItemDetailsContainer.css.map */

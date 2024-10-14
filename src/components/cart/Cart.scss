@@ -21,10 +21,17 @@ $height2: 80px;
 .cart{
     margin: 50px;
 
+
     .card-text1{
         color: $color5;
-        font-size: 25px;
+        font-size: 45px;
         font-weight: bolder;
+    }
+
+    .card-text2{
+        color: $color5;
+        font-size: 25px;
+        margin-bottom: 25px;
     }
 
     .btn{
@@ -38,7 +45,7 @@ $height2: 80px;
         transition: all 0.7s;
         text-align: center;
         text-decoration: none;
-        margin: 25px;
+        margin: 20px;
     }
     
     .btn:hover{

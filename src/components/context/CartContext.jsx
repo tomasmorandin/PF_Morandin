@@ -1,6 +1,4 @@
-import { createContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getSingleProduct } from "../firebase/firebase";
+import { createContext, useState } from "react";
 
 export const CartContext=createContext(false);
 
@@ -8,8 +6,22 @@ export function CartProvider({children}){
 
     const [cart, setCart]=useState([]);
 
-    
-    const addToCart = (id) => {
+
+    const addToCart = (item, quantity)=>{
+        const itemAdd = {...item, quantity}
+        const newCart = [...cart]
+        const isIntoTheCart = newCart.find((prod)=> prod.id === itemAdd.id)
+        if(isIntoTheCart){
+          isIntoTheCart.quantity = isIntoTheCart.quantity + quantity;
+          setCart(newCart)
+        }else{
+          setCart ([...cart, itemAdd])
+        }
+        };
+
+
+/*
+    const addToCart = (id, quantity) => {
         setCart((currItems)=>{
           const isItemsFound=currItems.find ((item)=> item.id === id);
           if (isItemsFound){
@@ -25,15 +37,8 @@ export function CartProvider({children}){
           }
         });
       };
-      
-      
-/*
-    const addToCart = (item)=>{
-        const itemAgregado = {...item, quantity}
-        setCart ([...cart, itemAgregado])
-    }
-*/
-        const removeItem = (id)=>{
+
+        const removeItem = (id, quantity)=>{
             setCart((currItems)=>{
               if(currItems.find((item)=> item.id === id)?.quantity === 1){
                 return currItems.filter((item)=> item.id !== id)
@@ -49,6 +54,7 @@ export function CartProvider({children}){
             })
           }
 
+*/
           const totalPrice = ()=>{
             return cart.reduce((acc, prod)=> acc + prod.price * prod.quantity, 0);
           } 
@@ -64,7 +70,7 @@ export function CartProvider({children}){
 
     return(
         <>
-        <CartContext.Provider value={[cart, setCart, addToCart, removeItem, totalPrice, quantity, clearCart]}>
+        <CartContext.Provider value={[cart, setCart, addToCart, totalPrice, quantity, clearCart]}>
           {children}
         </CartContext.Provider>
         </>

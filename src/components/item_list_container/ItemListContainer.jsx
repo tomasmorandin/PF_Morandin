@@ -25,7 +25,7 @@ return (
   <>
     <p className="greeting">{greeting}</p>
     {children}
-    {myProds && myProds.map((prod) => <Item key={prod.id} product={prod}/>)}
+    {myProds && myProds.map((prod) => <Item key={prod.id} item={prod}/>)}
   </>
 )
 };

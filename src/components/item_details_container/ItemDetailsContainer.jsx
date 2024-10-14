@@ -8,9 +8,8 @@ import { getSingleProduct } from "../firebase/firebase"
 
 export default function ItemDetailsContainer(){
 
-  const [cart, , addToCart, removeItem ] = useContext(CartContext);
+  const [cart, setCart, addToCart] = useContext(CartContext);
 
-  
   const [singleProd, setSingleProd]=useState([]);
 
   const {id} = useParams()
@@ -19,7 +18,20 @@ export default function ItemDetailsContainer(){
     getSingleProduct(id).then(res=> setSingleProd(res) ) 
 },[]);
 
-const getQuantityById=(id)=>{
+
+const [quantity, setQuantity] = useState (1);
+
+
+const handleClickSuma = ()=> {
+  quantity < singleProd.stock && setQuantity (quantity + 1);
+}
+
+const handleClickResta = ()=> {
+  quantity > 1 && setQuantity (quantity - 1);
+  }
+
+
+const getQuantityById=()=>{
   return cart.find((item)=>item.id=== id)?.quantity || 0;
 };
 
@@ -29,7 +41,7 @@ return (
   <>
   {singleProd && <article className="container-fluid">
     <div className="row">
-        <div className="col-lg-6">
+        <div className="col-lg-6" key={singleProd.id}>
           <img src={singleProd.image} alt={singleProd.title}/>
         </div>
         <div className="col-lg-6 description text-center">
@@ -41,8 +53,15 @@ return (
               <p className="card-text2 text-center">Descripcion:{singleProd.description}</p>
 
               {quantityPerItem > 0 && <div className="card-text2 text-center">Cantidad:{quantityPerItem}</div>}
-              <button className="btn" onClick={()=> addToCart(id)}>Agregar al carrito</button>
-              <button className="btn" onClick={()=> removeItem(id)}>Eliminar del carrito</button>
+              <p>{quantity}</p>
+              <section className='d-flex justify-content-center'>
+              <button className='button' onClick={handleClickResta}>-</button>
+              <button className='button' onClick={handleClickSuma}>+</button>
+              </section>
+              <button className="btn" onClick={()=>{addToCart(id, quantity)}}>Agregar al carrito</button>
+
+
+              {/* <button className="btn" onClick={()=> removeItem(id)}>Eliminar del carrito</button>  */}
         </div>
     </div>
 </article>}

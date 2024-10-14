@@ -7,6 +7,8 @@ import Cart from './components/cart/cart'
 import Contact from './components/contact/contact'
 import AddOrders from './components/add_orders/AddOrders'
 import { CartProvider } from './components/context/CartContext'
+import Foot from './components/footer/Foot'
+
 
 
 
@@ -26,6 +28,7 @@ function App() {
     <Route exact path='/Compra' element={<AddOrders/>}/>
     <Route exact path='/Contact' element={<Contact/>}/>
     </Routes>
+    <Foot/>
     </BrowserRouter>
     </CartProvider>
     </>

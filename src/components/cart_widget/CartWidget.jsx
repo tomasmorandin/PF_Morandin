@@ -5,11 +5,12 @@ import { useContext } from 'react';
 
 export default function CartWidget() {
 
-  const [cart, setCart] = useContext(CartContext);
+  const [cart , , , , , ] = useContext(CartContext);
 
-  const quantity = cart.reduce((acc, curr)=>{
-    return acc + curr.quantity;
-  }, 0);
+  const quantity = ()=>{
+    return cart.reduce((acc, prod)=> acc + prod.quantity, 0);
+  } 
+
 
   return (
       <>
@@ -17,7 +18,7 @@ export default function CartWidget() {
         <NavLink to={`/cart/:id`}>
           <i className="fa-solid fa-cart-shopping cart-item"></i>
         </NavLink>
-        <span className='mx-2'>{quantity}</span>
+        <span className='mx-2'>{quantity()}</span>
         </div>
       </>
     )
