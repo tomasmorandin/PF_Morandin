@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import {getFirestore} from "firebase/firestore";
-import "./AddOrders.css"
+import "./Checkout.css"
 
 const firebaseConfig = {
     apiKey: "AIzaSyDe-BiDXliCfYY0ruRTWno4tIvUEO882_U",
@@ -24,13 +24,13 @@ const firebaseConfig = {
 
 
 
-export default function AddOrders() {
+export default function Checkout() {
 
     const [orderId, setOrderId] = useState(null)
 
     const {register, handleSubmit} = useForm()
 
-    const [cart, , , , totalPrice, , clearCart ] = useContext(CartContext);
+    const {cart,totalPrice,clearCart}  = useContext(CartContext);
 
     const submit = (data)=>{
         const newOrder = {

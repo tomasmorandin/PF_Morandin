@@ -8,7 +8,7 @@ import { getSingleProduct } from "../firebase/firebase"
 
 export default function ItemDetailsContainer(){
 
-  const [cart, setCart, addToCart] = useContext(CartContext);
+  const {cart, setCart, addToCart} = useContext(CartContext);
 
   const [singleProd, setSingleProd]=useState([]);
 
@@ -58,10 +58,7 @@ return (
               <button className='button' onClick={handleClickResta}>-</button>
               <button className='button' onClick={handleClickSuma}>+</button>
               </section>
-              <button className="btn" onClick={()=>{addToCart(id, quantity)}}>Agregar al carrito</button>
-
-
-              {/* <button className="btn" onClick={()=> removeItem(id)}>Eliminar del carrito</button>  */}
+              <button className="btn" onClick={()=>{addToCart({singleProd, cantidad:quantity})}}>Agregar al carrito</button>
         </div>
     </div>
 </article>}

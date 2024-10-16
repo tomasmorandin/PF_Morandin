@@ -5,11 +5,9 @@ import ItemDetailsContainer from './components/item_details_container/ItemDetail
 import ItemListContainer from './components/item_list_container/ItemListContainer'
 import Cart from './components/cart/cart'
 import Contact from './components/contact/contact'
-import AddOrders from './components/add_orders/AddOrders'
 import { CartProvider } from './components/context/CartContext'
 import Foot from './components/footer/Foot'
-
-
+import Checkout from './components/checkout/Checkout'
 
 
 function App() {
@@ -25,7 +23,7 @@ function App() {
       <img className='img' src="src\img\web_SLIDE 3.jpg"  alt="Bienvenido"/></ItemListContainer>}/>
     <Route exact path='/category/:categoryId' element={<ItemListContainer greeting='¡Bienvenidos a Punto Pila Store!!!'></ItemListContainer>}/>
     <Route exact path='/item/:id' element={<ItemDetailsContainer/>}/>
-    <Route exact path='/Compra' element={<AddOrders/>}/>
+    <Route exact path='/Checkout' element={<Checkout/>}/>
     <Route exact path='/Contact' element={<Contact/>}/>
     </Routes>
     <Foot/>

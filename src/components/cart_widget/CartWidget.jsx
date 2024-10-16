@@ -5,11 +5,7 @@ import { useContext } from 'react';
 
 export default function CartWidget() {
 
-  const [cart , , , , , ] = useContext(CartContext);
-
-  const quantity = ()=>{
-    return cart.reduce((acc, prod)=> acc + prod.quantity, 0);
-  } 
+  const {cart, quantity} = useContext(CartContext);
 
 
   return (

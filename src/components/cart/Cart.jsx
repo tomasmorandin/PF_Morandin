@@ -4,13 +4,10 @@ import { CartContext } from "../context/CartContext";
 import { NavLink } from "react-router-dom";
 
 export default function Cart() {
-
-    const [cart, , , totalPrice, , clearCart] = useContext(CartContext);
-
+    const {cart,totalPrice,clearCart} = useContext(CartContext);
     const handleClear = () =>{
     clearCart();
     }
-
 
     return (
       <>
@@ -31,7 +28,7 @@ export default function Cart() {
       <> 
       <p className="card-text2">Precio total = ${totalPrice()}</p>
       <button className="btn" onClick={handleClear}>Vaciar</button>
-      <NavLink className="btn" to={`/Compra`}>Finalizar Compra</NavLink>
+      <NavLink className="btn" to={`/Checkout`}>Finalizar Compra</NavLink>
       </> : <h2 className="card-text2">El Carrito esta vacio!!</h2>
       }
 
@@ -42,12 +39,5 @@ export default function Cart() {
 
 }
 
-/*
-  <section className="cart text-center">
-  {cart.length && 
-  (<section>{cart && cart.map((prod) => <CartElements key={prod.id} item={prod}/>)}
-  <h3 className="card-text2 text-center">Articulos: {quantity}</h3>
-  </section>)}  
-  
-  */
+
 
